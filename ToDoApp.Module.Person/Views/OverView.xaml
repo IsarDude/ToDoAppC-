@@ -1,0 +1,198 @@
+﻿<UserControl
+    x:Class="ToDoApp.Module.PersonModule.Views.OverView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:viewModels="clr-namespace:ToDoApp.Module.PersonModule.ViewModels"
+    prism:ViewModelLocator.AutoWireViewModel="True">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <BooleanToVisibilityConverter x:Key="BoolToVis" />
+                </ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/ToDo.Core;component/Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="0"
+            Margin="12,30,12,12"
+            FontSize="20"
+            FontWeight="Bold"
+            Text="Team Progress" />
+        <TextBlock
+            Grid.Row="0"
+            Grid.Column="1"
+            Margin="12,30,12,12"
+            FontSize="17"
+            FontWeight="Bold">
+            <Run Text="{Binding Progress}" />
+            <Run Text="%" />
+        </TextBlock>
+        <ProgressBar
+            Grid.Row="1"
+            Grid.Column="0"
+            Grid.ColumnSpan="2"
+            Height="20"
+            Margin="12,20,12,20"
+            Maximum="100"
+            Minimum="0"
+            Value="{Binding Progress}" />
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="0"
+            Margin="12,4,12,4"
+            FontSize="20"
+            FontWeight="Bold"
+            Text="Overdue Tasks" />
+        <TextBlock
+            Grid.Row="2"
+            Grid.Column="1"
+            Margin="12,4,12,4"
+            FontSize="20"
+            FontWeight="Bold"
+            Text="All Tasks" />
+        <ListBox
+            Name="LiatBoxOverdueToDoes"
+            Grid.Row="3"
+            Grid.Column="0"
+            Margin="{StaticResource MarginAllSides12}"
+            HorizontalAlignment="Stretch"
+            Focusable="True"
+            ItemsSource="{Binding OverdueToDoes}">
+            <ListBox.Template>
+                <ControlTemplate>
+                    <DockPanel LastChildFill="False">
+                        <Grid Margin="{StaticResource MarginAllSides4}" DockPanel.Dock="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" FontWeight="Bold">Description</Label>
+                            <Label
+                                Grid.Column="1"
+                                FontWeight="Bold"
+                                Foreground="OrangeRed">
+                                Due Date
+                            </Label>
+                            <Label Grid.Column="2" FontWeight="Bold">Important</Label>
+                            <Label Grid.Column="3" FontWeight="Bold">TeamMember</Label>
+                        </Grid>
+                        <ItemsPresenter />
+                    </DockPanel>
+                </ControlTemplate>
+            </ListBox.Template>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border
+                        Padding="{StaticResource MarginAllSides4}"
+                        BorderBrush="OrangeRed"
+                        BorderThickness="1,1,1,1">
+                        <Grid Margin="{StaticResource MarginAllSides4}">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100" />
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock
+                                Grid.Column="0"
+                                FontSize="{StaticResource FontSizeNormal}"
+                                Text="{Binding Description}" />
+                            <TextBlock
+                                Grid.Column="1"
+                                FontSize="{StaticResource FontSizeNormal}"
+                                Foreground="OrangeRed"
+                                Text="{Binding DueDate}" />
+                            <StackPanel Grid.Column="2" Orientation="Horizontal">
+                                <Image
+                                    MaxHeight="20"
+                                    Source="..\Resources\exclamation-mark.png"
+                                    Visibility="{Binding IsImportant, Converter={StaticResource BoolToVis}}" />
+                            </StackPanel>
+                            <TextBlock Grid.Column="3" FontSize="{StaticResource FontSizeNormal}">
+                                <Run Text="{Binding Person.LastName}" />
+                                <Run Text="{Binding Person.FirstName}" />
+                            </TextBlock>
+                        </Grid>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <ListBox
+            Name="ListBoxAllToDoes"
+            Grid.Row="3"
+            Grid.Column="1"
+            Margin="{StaticResource MarginAllSides12}"
+            HorizontalAlignment="Stretch"
+            Focusable="True"
+            ItemsSource="{Binding TeamToDoes}">
+            <ListBox.Template>
+                <ControlTemplate>
+                    <DockPanel LastChildFill="False">
+                        <Grid Margin="{StaticResource MarginAllSides4}" DockPanel.Dock="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="150" />
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100" />
+                                <ColumnDefinition Width="100" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" FontWeight="Bold">Description</Label>
+                            <Label Grid.Column="1" FontWeight="Bold">Due Date</Label>
+                            <Label Grid.Column="2" FontWeight="Bold">Important</Label>
+                            <Label Grid.Column="3" FontWeight="Bold">TeamMember</Label>
+                        </Grid>
+                        <ItemsPresenter />
+                    </DockPanel>
+                </ControlTemplate>
+            </ListBox.Template>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="{StaticResource MarginAllSides4}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock
+                            Grid.Column="0"
+                            FontSize="{StaticResource FontSizeNormal}"
+                            Text="{Binding Description}" />
+                        <TextBlock
+                            Grid.Column="1"
+                            FontSize="{StaticResource FontSizeNormal}"
+                            Text="{Binding DueDate}" />
+                        <StackPanel Grid.Column="2" Orientation="Horizontal">
+                            <Image
+                                MaxHeight="20"
+                                Source="C:\Users\Lukas\source\repos\ToDoApp\ToDoApp.Module.Person\Resources\exclamation-mark.png"
+                                Visibility="{Binding IsImportant, Converter={StaticResource BoolToVis}}" />
+                        </StackPanel>
+                        <TextBlock Grid.Column="3" FontSize="{StaticResource FontSizeNormal}">
+                            <Run Text="{Binding Person.LastName}" />
+                            <Run Text="{Binding Person.FirstName}" />
+                        </TextBlock>
+                    </Grid>
+
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</UserControl>

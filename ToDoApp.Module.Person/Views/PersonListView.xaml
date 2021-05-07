@@ -1,0 +1,82 @@
+﻿<UserControl
+    x:Class="ToDoApp.Module.PersonModule.Views.PersonListView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:viewModels="clr-namespace:ToDoApp.Module.PersonModule.ViewModels"
+    d:DesignHeight="300"
+    d:DesignWidth="300"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    mc:Ignorable="d">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ToDo.Core;component/Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+
+
+    <DockPanel MinWidth="240" LastChildFill="False">
+        <StackPanel DockPanel.Dock="Top">
+            <TextBox
+                Name="TextBoxFilter"
+                Height="33"
+                Margin="{StaticResource MarginBottom12}"
+                FontSize="{StaticResource FontSizeLarge}"
+                Text="{Binding Path=Filter, UpdateSourceTrigger=PropertyChanged}" />
+        </StackPanel>
+
+        <ListBox
+            Name="ListBoxContacts"
+            BorderThickness="0,0,0,0"
+            DockPanel.Dock="Top"
+            Focusable="true"
+            ItemsSource="{Binding Persons}"
+            SelectedItem="{Binding SelectedPerson, Mode=TwoWay}">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Setter Property="HorizontalAlignment" Value="Stretch" />
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <ListBox.ItemTemplate>
+                <DataTemplate DataType="viewModels:PersonViewModel">
+                    <DockPanel>
+                        <StackPanel Margin="{StaticResource MarginAllSides4}">
+                            <TextBlock FontSize="{StaticResource FontSizeLarge}">
+                                <Run Text="{Binding FirstName}" />
+                                <Run Text="{Binding LastName}" />
+                            </TextBlock>
+                            <TextBlock FontSize="{StaticResource FontSizeNormal}">
+                                <Run Text="{Binding Position}" />
+                            </TextBlock>
+
+                        </StackPanel>
+                    </DockPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+
+        </ListBox>
+        <StackPanel Margin="{StaticResource MarginTop4}" DockPanel.Dock="Bottom">
+            <Button
+                Width="290"
+                Margin="{StaticResource MarginAllSides4}"
+                Padding="{StaticResource MarginAllSides12}"
+                Command="{Binding NewCommand}"
+                Content="_New Teammeber" />
+
+            <Button
+                Width="290"
+                Margin="4,4,4,20"
+                Padding="{StaticResource MarginAllSides12}"
+                Command="{Binding DeleteCommand}"
+                Content="_Delete Teammember"
+                DockPanel.Dock="Bottom" />
+
+
+        </StackPanel>
+    </DockPanel>
+
+</UserControl>

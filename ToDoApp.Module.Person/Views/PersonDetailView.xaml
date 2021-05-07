@@ -1,0 +1,43 @@
+﻿<UserControl
+    x:Class="ToDoApp.Module.PersonModule.Views.PersonDetailView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:viewModels="clr-namespace:ToDoApp.Module.PersonModule.ViewModels"
+    prism:ViewModelLocator.AutoWireViewModel="True">
+
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/ToDo.Core;component/Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <StackPanel MinWidth="400" Margin="{StaticResource MarginLeftRight12}">
+        <Label FontSize="{StaticResource FontSizeNormal}" Target="{Binding ElementName=TextBoxFirstName}">
+            _FirstName
+        </Label>
+        <TextBox
+            Name="TextBoxFirstName"
+            Margin="{StaticResource MarginBottom12}"
+            FontSize="{StaticResource FontSizeLarge}"
+            Text="{Binding Path=SelectedPerson.FirstName, UpdateSourceTrigger=PropertyChanged}" />
+        <Label FontSize="{StaticResource FontSizeNormal}" Target="{Binding ElementName=TextBoxLastName}">
+            _LastName
+        </Label>
+        <TextBox
+            Name="TextBoxLastName"
+            Margin="{StaticResource MarginBottom12}"
+            FontSize="{StaticResource FontSizeLarge}"
+            Text="{Binding Path=SelectedPerson.LastName, UpdateSourceTrigger=PropertyChanged}" />
+        <Label FontSize="{StaticResource FontSizeNormal}" Target="{Binding ElementName=TextBoxPosition}">
+            _Position
+        </Label>
+        <TextBox
+            Name="TextBoxPosition"
+            Margin="{StaticResource MarginBottom12}"
+            FontSize="{StaticResource FontSizeLarge}"
+            Text="{Binding Path=SelectedPerson.Position, UpdateSourceTrigger=PropertyChanged}" />
+    </StackPanel>
+</UserControl>

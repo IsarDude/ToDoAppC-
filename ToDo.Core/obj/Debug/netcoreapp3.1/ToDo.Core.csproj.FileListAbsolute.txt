@@ -1,0 +1,16 @@
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Core\bin\Debug\netcoreapp3.1\ToDo.Core.deps.json
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Core\bin\Debug\netcoreapp3.1\ToDo.Core.dll
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Core\bin\Debug\netcoreapp3.1\ToDo.Core.pdb
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Core\bin\Debug\netcoreapp3.1\ToDo.Service.dll
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Core\bin\Debug\netcoreapp3.1\ToDo.Service.pdb
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Core\obj\Debug\netcoreapp3.1\ToDo.Core.csprojAssemblyReference.cache
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Core\obj\Debug\netcoreapp3.1\Themes\Generic.WPF.baml
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Core\obj\Debug\netcoreapp3.1\Themes\Generic.baml
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Core\obj\Debug\netcoreapp3.1\ToDo.Core_MarkupCompile.cache
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Core\obj\Debug\netcoreapp3.1\ToDo.Core.g.resources
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Core\obj\Debug\netcoreapp3.1\ToDo.Core.AssemblyInfoInputs.cache
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Core\obj\Debug\netcoreapp3.1\ToDo.Core.AssemblyInfo.cs
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Core\obj\Debug\netcoreapp3.1\ToDo.Core.csproj.CoreCompileInputs.cache
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Core\obj\Debug\netcoreapp3.1\ToDo.Core.csproj.CopyComplete
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Core\obj\Debug\netcoreapp3.1\ToDo.Core.dll
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Core\obj\Debug\netcoreapp3.1\ToDo.Core.pdb

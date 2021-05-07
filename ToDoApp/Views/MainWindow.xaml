@@ -1,0 +1,51 @@
+﻿<Window
+    x:Class="ToDoApp.Views.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:prism="http://prismlibrary.com/"
+    xmlns:ui="http://schemas.modernwpf.com/2019"
+    Title="{Binding Title}"
+    Width="1600"
+    Height="720"
+    prism:ViewModelLocator.AutoWireViewModel="True"
+    ui:WindowHelper.UseModernWindowStyle="True">
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary>
+                    <FontFamily x:Key="FontAwesome">pack://application:,,,/Resources/#fontawesome</FontFamily>
+                </ResourceDictionary>
+                <ResourceDictionary Source="pack://application:,,,/ToDo.Core;component/Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+    <DockPanel Margin="0,8,0,0">
+        <ContentControl
+            MinWidth="200"
+            prism:RegionManager.RegionName="LeftContentRegion"
+            DockPanel.Dock="Left" />
+        <DockPanel DockPanel.Dock="Top">
+            <Button
+                Height="32"
+                Margin="8,0,8,4"
+                Padding="16,4,16,4"
+                Command="{Binding GoToPersonDetailView}"
+                Content="Person Details" />
+            <Button
+                Height="32"
+                Margin="8,0,8,4"
+                Padding="16,4,16,4"
+                Command="{Binding GoToToDoView}"
+                Content="ToDoes" />
+            <Button
+                Height="32"
+                Margin="8,0,8,4"
+                Padding="16,4,16,4"
+                Command="{Binding GoToOverView}"
+                Content="Overview"
+                DockPanel.Dock="Right" />
+            <Label />
+        </DockPanel>
+        <ContentControl prism:RegionManager.RegionName="MainContentRegion" />
+    </DockPanel>
+</Window>

@@ -1,0 +1,13 @@
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Service\bin\Debug\netcoreapp3.1\ToDo.Service.deps.json
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Service\bin\Debug\netcoreapp3.1\ToDo.Service.dll
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Service\bin\Debug\netcoreapp3.1\ToDo.Service.pdb
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Service\obj\Debug\netcoreapp3.1\ToDo.Service.csprojAssemblyReference.cache
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Service\obj\Debug\netcoreapp3.1\Views\YesNoDialogView.baml
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Service\obj\Debug\netcoreapp3.1\Views\YesNoDialogView.g.cs
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Service\obj\Debug\netcoreapp3.1\ToDo.Service_MarkupCompile.cache
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Service\obj\Debug\netcoreapp3.1\ToDo.Service.g.resources
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Service\obj\Debug\netcoreapp3.1\ToDo.Service.AssemblyInfoInputs.cache
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Service\obj\Debug\netcoreapp3.1\ToDo.Service.AssemblyInfo.cs
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Service\obj\Debug\netcoreapp3.1\ToDo.Service.csproj.CoreCompileInputs.cache
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Service\obj\Debug\netcoreapp3.1\ToDo.Service.dll
+C:\Users\Lukas\source\repos\ToDoApp\ToDo.Service\obj\Debug\netcoreapp3.1\ToDo.Service.pdb
